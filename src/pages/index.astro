@@ -1,47 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import Socialpill from '../components/Socialpill.astro';
-import Linkedin from '../components/Icons/Linkedin.astro';
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import Socialpill from "../components/Socialpill.astro";
+import Linkedin from "../components/Icons/Linkedin.astro";
 import Github from "../components/Icons/Github.astro";
-import Gmail from '../components/Icons/Gmail.astro';
-import X from '../components/Icons/X.astro';
-
+import Gmail from "../components/Icons/Gmail.astro";
+import X from "../components/Icons/X.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
+<Layout
+  title="Portfolio De Danilo Caceres - con mas de 10 años en Technical support"
+  description="Contratame ahora no pierdas la oportunidad !!!"
+>
+  <main class="px-4">
+    <SectionContainer class="section py-44 pb-32 w-full mx-auto lg:w-[740px]">
+      <h1
+        class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10 text-center"
+      >
+        Hola soy Danilo <a
+          href="https://www.linkedin.com/in/danilo-caceres/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center py-4 hover:scale-105"
+        >
+          <Badge>Trabajemos juntos ahora !!!</Badge></a
+        >
+      </h1>
+      <h2 class="text-2xl text-wrap">
+        <span> Mas de 10 años como Technical support freelanse</span>,
+        <span class="opacity-80">
+          Desarrollador web junior Python y Javascript. De Montevideo, Ururguay
+        </span>
+      </h2>
+      <nav class="flex gap-x-2">
+        <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+          <Linkedin class="size-6" />
+        </Socialpill>
 
-<Layout title="Portfolio">
-	<section class="w-full lg:w-[740px] mx-auto py-44 ">
-	<main>
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-		Hola soy Danilo <a
-			href="https://www.linkedin.com/in/danilo-caceres/"
-			target="_blank" 
-			rel="noopener"
-			class="flex justify-center items-center py-4 hover:scale-105 "
-		>
-			<Badge>Trabajemos juntos ahora !!!</Badge></a></h1>
-		<h2 class="text-2xl text-wrap"> <span> Mas de 10 años como Technical support </span>, <span class="opacity-80">Desarrollador web junior Python y Javascript. De Montevideo, Ururguay </span> 
-		</h2>
-		<nav class="flex gap-x-2">
-			<Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
-				<Linkedin class ="w-6 h-6"/>Danilo Caceres
-			</Socialpill>
+        <Socialpill href="https://github.com/danilo1992-sys">
+          <Github class="size-6" />
+        </Socialpill>
 
-			<Socialpill href="https://github.com/danilo1992-sys">
-				<Github class ="w-6 h-6"/>
-			</Socialpill>
+        <Socialpill href="daniloca22@outlook.com">
+          <Gmail class="size-6" />
+        </Socialpill>
 
-			<Socialpill href="daniloca22@outlook.com">
-				<Gmail class ="w-6 h-6"/>
-			</Socialpill>
+        <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+          <X class="size-6" />
+        </Socialpill>
+      </nav>
+    </SectionContainer>
 
-			<Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
-				<X class ="w-6 h-6"/>
-			</Socialpill>
-		</nav>
-	</main>
-</section>
+    <SectionContainer>
+      <Experience />
+    </SectionContainer>
+  </main>
 </Layout>
-
