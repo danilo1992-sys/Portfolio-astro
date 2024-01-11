@@ -9,6 +9,9 @@ import Gmail from "../components/Icons/Gmail.astro";
 import X from "../components/Icons/X.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Discord from "../components/Icons/Discord.astro";
+import Briefcase from "../components/Icons/Briefcase.astro";
+import academy from '../components/academy.astro'
 ---
 
 <Layout
@@ -16,7 +19,12 @@ import SectionContainer from "../components/SectionContainer.astro";
   description="Contratame ahora no pierdas la oportunidad !!!"
 >
   <main class="px-4">
-    <SectionContainer class="section py-44 pb-32 w-full mx-auto lg:w-[740px]">
+    <SectionContainer class="py-44 pb-20">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://avatars.githubusercontent.com/u/64212933?v=4"
+        alt="Danilo Caceres"
+      />
       <h1
         class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10 text-center"
       >
@@ -29,7 +37,7 @@ import SectionContainer from "../components/SectionContainer.astro";
           <Badge>Trabajemos juntos ahora !!!</Badge></a
         >
       </h1>
-      <h2 class="text-2xl text-wrap">
+      <h2 class="text-2xl font-semibold mb-4">
         <span> Mas de 10 años como Technical support freelanse</span>,
         <span class="opacity-80">
           Desarrollador web junior Python y Javascript. De Montevideo, Ururguay
@@ -44,18 +52,30 @@ import SectionContainer from "../components/SectionContainer.astro";
           <Github class="size-6" />
         </Socialpill>
 
-        <Socialpill href="daniloca22@outlook.com">
-          <Gmail class="size-6" />
+        <Socialpill href="https://discord.com/invite/_danilo22">
+          <Discord class="size-6" />
         </Socialpill>
 
-        <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+        <Socialpill href="https://twitter.com/daniloca22_">
           <X class="size-6" />
+        </Socialpill>
+
+        <Socialpill href="daniloca22@outlook.com">
+          <Gmail class="size-6" />
         </Socialpill>
       </nav>
     </SectionContainer>
 
     <SectionContainer>
+      <h2 class="text-2xl font-semibold mb-7 flex gap-x-3 items-center">
+        <Briefcase class="size-6" /> 
+          Esperiencia laboral 
+      </h2>
       <Experience />
+      <h2 class="text-2xl font-semibold mb-7 flex gap-x-3 items-center">
+        <academy />
+        Experiencia acacdemica 
+      </h2>
     </SectionContainer>
   </main>
 </Layout>

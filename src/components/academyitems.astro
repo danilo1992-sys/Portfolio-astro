@@ -1,0 +1,30 @@
+---
+import academy from './academy.astro';
+
+const EPERIENCES = [
+    {
+        date: "Actualmente...",
+        title: "Tecnical support freelancers",
+        description: "Reparacion e instalacion de equipos informaticos de toda indole "
+    },
+    {
+        date: "Actualmente...",
+        title: "Tecnical support freelancers",
+        description: "Reparacion e instalacion de equipos informaticos de toda indole "
+    },
+    {
+        date: "Actualmente...",
+        title: "Tecnical support freelancers",
+        description: "Reparacion e instalacion de equipos informaticos de toda indole "
+    },
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    {    
+        EPERIENCES.map((Experience) => (
+        <li class="mb-10 ms-4">
+            <academy {...Experience}/>
+        </li>
+        ))
+    }
+</ol>
