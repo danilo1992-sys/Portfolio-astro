@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
 import Socialpill from "../components/Socialpill.astro";
 import Linkedin from "../components/Icons/Linkedin.astro";
@@ -11,6 +10,8 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Discord from "../components/Icons/Discord.astro";
 import Academy from '../components/Icons/academy.astro';
+import Projects from '../components/Projects.astro';
+import Code from '../components/Icons/Code.astro'
 ---
 
 <Layout
@@ -25,7 +26,7 @@ import Academy from '../components/Icons/academy.astro';
         alt="Danilo Caceres"
       />
       <h1
-        class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10 text-center"
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-center"
       >
         Hola soy Danilo <a
           href="https://www.linkedin.com/in/danilo-caceres/"
@@ -36,32 +37,32 @@ import Academy from '../components/Icons/academy.astro';
           <Badge>Trabajemos juntos ahora !!!</Badge></a
         >
       </h1>
-      <h2 class="text-2xl font-semibold mb-4">
+      <h2 class=" text-2xl lg:text-2xl text-wrap max-w-[500px]">
         <span> Mas de 10 años como Technical support freelanse</span>,
         <span class="opacity-80">
           Desarrollador web junior Python y Javascript. De Montevideo, Ururguay
         </span>
       </h2>
-      <nav class="flex gap-x-2">
+      <nav class="flex gap-4 mt-8 flex-wrap">
         <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
-          <Linkedin class="size-6" />
+          <Linkedin class="size-4 md:size-6" />
         </Socialpill>
-
+        
         <Socialpill href="https://github.com/danilo1992-sys">
-          <Github class="size-6" />
+          <Github class="size-4 md:size-6" />
         </Socialpill>
 
         <Socialpill href="https://discord.com/invite/_danilo22">
-          <Discord class="size-6" />
+          <Discord class="size-4 md:size-6" />
         </Socialpill>
 
         <Socialpill href="https://twitter.com/daniloca22_">
-          <X class="size-6" />
+          <X class="size-4 md:size-6" />
         </Socialpill>
 
-        <Socialpill href="daniloca22@outlook.com">
-          <Gmail class="size-6" />
-        </Socialpill>
+        <Socialpill href="">
+          <Gmail class="size-4 lg:size-6" /> daniloca22@outlook.com
+        </Socialpill> 
       </nav>
     </SectionContainer>
 
@@ -72,5 +73,13 @@ import Academy from '../components/Icons/academy.astro';
        </h2>
        <Experience />
     </SectionContainer>
+
+    <SectionContainer id="Projectos">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center pt-10">
+        <Code class="size-7" />
+        Projectos 
+      </h2>
+      <Projects />
+   </SectionContainer>
   </main>
 </Layout>

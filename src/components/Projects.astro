@@ -1,0 +1,26 @@
+---
+const PROJECTS =[
+    {
+        title:"Mail app",
+        description:"Aplicacion de envio de mail creada con Flask, Python y HTML ",
+        link:"https://mailerapp-cdxm.onrender.com/",
+        github:"https://github.com/danilo1992-sys/mailerapp",
+       image:"/public/59shots_so.webp",
+       tag: ["HTML", "CSS","PYTHON", "MYSQL","FLASK"],
+    },
+]
+---
+{
+    PROJECTS.map(({ title, description, tag, image}) => (
+        <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tag.map((tag) => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img src={image} alt={"Captura de pantalla del proyecto ${image}"}>
+        </article>
+    ))
+}

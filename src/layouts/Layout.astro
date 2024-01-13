@@ -1,13 +1,14 @@
 ---
-import '@fontsource-variable/onest/';
-import Header from '../components/Header.astro';
+import "@fontsource-variable/onest/";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
-	description:string;
+	description: string;
 }
 
-const { description,title } = Astro.props;
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,31 +21,34 @@ const { description,title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+	<body class="py-4">
+		<div
+			class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+		>
+		</div>
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
 	:root {
-		color-scheme: light dark; 
+		color-scheme: light dark;
 	}
 	html {
-		font-family: 'Onest varible ',system-ui, sans-serif;
+		font-family: "Onest varible ", system-ui, sans-serif;
 		scroll-behavior: smooth;
 	}
 
-	body{
+	body {
 		background-color: #050505;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
 		overscroll-behavior: none;
-		
 	}
 
-	@media (prefers-reduce-motion: reduce){
+	@media (prefers-reduce-motion: reduce) {
 		html {
 			scroll-behavior: auto;
 		}
