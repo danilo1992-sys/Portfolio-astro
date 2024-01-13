@@ -1,20 +1,40 @@
 ---
-import ExperienceItems from './ExpirienceItems.astro';
+import ExperienceItems from "./ExpirienceItems.astro";
 
 const EPERIENCES = [
     {
-        date: "Actualmente...",
-        title: "Tecnical support freelancers",
-        description: "Reparacion e instalacion de equipos informaticos de toda indole "
+        date: "24/11/2020",
+        title: "Tecnico en soporte de sistemas",
+        description:
+            "Egresado del instituto tecnologico superior en la carrera de Tecnico en soporte de sistemas",
     },
-]
+    {
+        date: "31/10/2023",
+        title: "Programador Fulstack",
+        description:
+            "Egresado de la academia Udemy con el instructor Nicolas Schurmann en el curso de Javascript, React y Nodejs",
+    },
+    {
+        date: "04/03/2022",
+        title: "Programador Python",
+        description:
+            "Egresado de la academia Udemy con el instructor Nicolas Schurmann en el curso de Python, MySQL Y Flask",
+    },
+    {
+        date: "07/07/2023",
+        title: "DevOps",
+        description:
+            "Egresado de la academia Udemy con el instructor Carlos Adrain Soto Botero, en el curso de DevOps con Docker, Jenkins, Kubernetes, git, gitflow y CI y CD",
+    },
+];
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
-    {    
+
+<ol class="relative dark:border-gray-700">
+    {
         EPERIENCES.map((Experience) => (
-        <li class="mb-10 ms-4">
-            <ExperienceItems {...Experience}/>
-        </li>
+            <li class="mb-10 ms-4">
+                <ExperienceItems {...Experience} />
+            </li>
         ))
     }
 </ol>

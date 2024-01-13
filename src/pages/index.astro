@@ -10,8 +10,7 @@ import X from "../components/Icons/X.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Discord from "../components/Icons/Discord.astro";
-import Briefcase from "../components/Icons/Briefcase.astro";
-import academy from '../components/academy.astro'
+import Academy from '../components/Icons/academy.astro';
 ---
 
 <Layout
@@ -66,16 +65,12 @@ import academy from '../components/academy.astro'
       </nav>
     </SectionContainer>
 
-    <SectionContainer>
-      <h2 class="text-2xl font-semibold mb-7 flex gap-x-3 items-center">
-        <Briefcase class="size-6" /> 
-          Esperiencia laboral 
-      </h2>
-      <Experience />
-      <h2 class="text-2xl font-semibold mb-7 flex gap-x-3 items-center">
-        <academy />
-        Experiencia acacdemica 
-      </h2>
+    <SectionContainer id="Experiencia">
+       <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center pt-10">
+          <Academy class="size-6" />
+          Experiencia Academica
+       </h2>
+       <Experience />
     </SectionContainer>
   </main>
 </Layout>
