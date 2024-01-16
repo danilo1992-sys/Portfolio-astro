@@ -30,7 +30,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │    │    ├── Github.astro
 │   │    │    ├── Gamil.astro
 │   │    │    ├── Linkedin.astro
-│   │    │    ├── X.astro
+│   │    │    └── X.astro
 │   │    ├── static/
 │   │    ├── Card.astro
 │   │    ├── Experience.astro
@@ -40,7 +40,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │    ├── Projects.astro
 │   │    ├── SectionContainer.astro
 │   │    ├── Socialpill.astro
-│   │   └── Badge.astro
+│   │    └── Badge.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
