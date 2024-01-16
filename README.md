@@ -22,24 +22,24 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-        ├── icons/
-            ├── academy.astro
-            ├── Changethemes.astro
-            ├── Code.astro
-            ├── Discord.astro
-            ├── Github.astro
-            ├── Gamil.astro
-            ├── Linkedin.astro
-            ├── X.astro
-        ├── static/
-        ├── Card.astro
-        ├── Experience.astro
-        ├── Experienceitems.astro
-        ├── Footer.astro
-        ├── Header.astro
-        ├── Projects.astro
-        ├── SectionContainer.astro
-        ├── Socialpill.astro
+│   │    ├── icons/
+│   │    │    ├── Changethemes.astro
+│   │    │    ├── Code.astro
+│   │    │    ├── academy.astro
+│   │    │    ├── Discord.astro
+│   │    │    ├── Github.astro
+│   │    │    ├── Gamil.astro
+│   │    │    ├── Linkedin.astro
+│   │    │    ├── X.astro
+│   │    ├── static/
+│   │    ├── Card.astro
+│   │    ├── Experience.astro
+│   │    ├── Experienceitems.astro
+│   │    ├── Footer.astro
+│   │    ├── Header.astro
+│   │    ├── Projects.astro
+│   │    ├── SectionContainer.astro
+│   │    ├── Socialpill.astro
 │   │   └── Badge.astro
 │   ├── layouts/
 │   │   └── Layout.astro
