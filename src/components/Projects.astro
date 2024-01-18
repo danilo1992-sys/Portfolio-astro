@@ -1,26 +1,65 @@
 ---
-const PROJECTS =[
-    {
-        title:"Mail app",
-        description:"Aplicacion de envio de mail creada con Flask, Python y HTML ",
-        link:"https://mailerapp-cdxm.onrender.com/",
-        github:"https://github.com/danilo1992-sys/mailerapp",
-       image:"/public/59shots_so.webp",
-       tag: ["HTML", "CSS","PYTHON", "MYSQL","FLASK"],
+import Flask from "./Icons/Flask.astro";
+import HTML from "./Icons/HTML.astro";
+import Mysql from "./Icons/Mysql.astro";
+import Python from "./Icons/Python.astro";
+import Css from "./Icons/css.astro";
+
+const tags = {
+    PYTHON: {
+        name: "python",
+        class:"bg-black text-white",
+        Icon: Python,
     },
-]
+    HTML: {
+        name:"HTML",
+        class:"bg-black text-white",
+        Icon: HTML,
+    },
+    Css: {
+        name:"Css",
+        class:"bg-black text-white",
+        Icon: Css,
+    },
+    Mysql: {
+        name:"Mysql",
+        class:"bg-black text-white",
+        Icon: Mysql,
+    },
+    Flask: {
+        name:"Flask",
+        class:"bg-white text-white",
+        Icon: Flask,
+    },
+};
+const PROJECTS = [
+    {
+        title: "Mail app",
+        description:"Aplicacion de envio de mail creada con Flask, Python y HTML ",
+        link: "https://mailerapp-cdxm.onrender.com/",
+        github: "https://github.com/danilo1992-sys/mailerapp",
+        image: "/public/59shots_so.webp",
+        tags: [tags.PYTHON, tags.HTML, tags.Css, tags.Flask, tags.Mysql],
+    },
+];
 ---
+
 {
-    PROJECTS.map(({ title, description, tag, image}) => (
+    PROJECTS.map(({ title, description, tags, image }) => (
         <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
-                {tag.map((tag) => (
-                    <li>{tag}</li>
+            <h3 class="text-2xl font-semibold text-sky-300/80">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-4 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={'flex gap-x-2 rounded-full text-sm ${tag.class} px-2 py-1'}'>
+                            <tag.Icon class="size-6" />
+                            {tag.name}
+                        </span>
+                    </li>
                 ))}
             </ul>
-            <img src={image} alt={"Captura de pantalla del proyecto ${image}"}>
+            <img src={image} alt={"Captura de pantalla del proyecto ${image}"} />
         </article>
     ))
 }
