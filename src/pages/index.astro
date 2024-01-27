@@ -6,6 +6,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Academy from '../components/Icons/academy.astro';
 import Projects from '../components/Projects.astro';
 import Code from '../components/Icons/Code.astro'
+<<<<<<< HEAD
 import AboutMe from '../components/AboutMe.astro'
 import User from '../components/Icons/User.astro'
 import Contact from '../components/Contacto.astro'
@@ -43,6 +44,71 @@ description="Contratame ahora no pierdas la oportunidad !!!" >
   <SectionContainer > 
     <Socialmedia /> 
   <SectionContainer id="Experiencia" >
+=======
+---
+
+<Layout
+  title="Portfolio De Danilo Caceres - con mas de 10 años en Technical support"
+  description="Contratame ahora no pierdas la oportunidad !!!"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-20">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://avatars.githubusercontent.com/u/64212933?v=4"
+        alt="Danilo Caceres"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-center"
+      >
+        Hola soy Danilo <a
+          href="https://www.linkedin.com/in/danilo-caceres/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center py-4 hover:scale-105"
+        >
+          <Badge>Trabajemos juntos ahora !!!</Badge></a
+        >
+      </h1>
+      <h2 class=" text-2xl lg:text-2xl text-wrap max-w-[500px]">
+        <span> Mas de 10 años como Technical support freelanse</span>,
+        <span class="opacity-80">
+          Desarrollador web junior Python y Javascript. De Montevideo, Ururguay
+        </span>
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+          <Linkedin class="size-4 md:size-6" />
+        </Socialpill>
+        
+        <Socialpill href="https://github.com/danilo1992-sys">
+          <Github class="size-4 md:size-6" />
+        </Socialpill>
+
+        <Socialpill href="https://discord.com/invite/_danilo22">
+          <Discord class="size-4 md:size-6" />
+        </Socialpill>
+
+        <Socialpill href="https://twitter.com/daniloca22_">
+          <X class="size-4 md:size-6" />
+        </Socialpill>
+
+        <Socialpill href="">
+          <Gmail class="size-4 lg:size-6" /> daniloca22@outlook.com
+        </Socialpill> 
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="Experiencia">
+       <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center pt-10">
+          <Academy class="size-6" />
+          Experiencia Academica
+       </h2>
+       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="Projectos">
+>>>>>>> 67856f354a42caa62d3b8571bea47d0dffa776a9
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center pt-10">
         <Academy class="size-6"/>
         Experiencia Academica

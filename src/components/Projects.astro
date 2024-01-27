@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import Css from "./Icons/css.astro";
 import Flask from "./Icons/Flask.astro";
 import Github from './Icons/Github.astro'
@@ -39,17 +40,28 @@ const tags = {
     },
 };
 const PROJECTS = [
+=======
+const PROJECTS =[
+>>>>>>> 67856f354a42caa62d3b8571bea47d0dffa776a9
     {
-        title: "Mail app",
+        title:"Mail app",
         description:"Aplicacion de envio de mail creada con Flask, Python y HTML ",
+<<<<<<< HEAD
         link: "https://mailerapp-cdxm.onrender.com/",
         github: "https://github.com/danilo1992-sys/mailerapp",
         image: "/public/59shots_so.webp",
         tags: [tags.PYTHON, tags.HTML, tags.Css, tags.Flask, tags.Mysql]
+=======
+        link:"https://mailerapp-cdxm.onrender.com/",
+        github:"https://github.com/danilo1992-sys/mailerapp",
+       image:"/public/59shots_so.webp",
+       tag: ["HTML", "CSS","PYTHON", "MYSQL","FLASK"],
+>>>>>>> 67856f354a42caa62d3b8571bea47d0dffa776a9
     },
-];
+]
 ---
 {
+<<<<<<< HEAD
     PROJECTS.map(({ title, description, tags, image, link, github}) => (
         <article>
             <h3 class="text-2xl font-semibold text-sky-300/80">{title}</h3>
@@ -77,6 +89,18 @@ const PROJECTS = [
             </footer>
             <footer>
             </footer>
+=======
+    PROJECTS.map(({ title, description, tag, image}) => (
+        <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tag.map((tag) => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img src={image} alt={"Captura de pantalla del proyecto ${image}"}>
+>>>>>>> 67856f354a42caa62d3b8571bea47d0dffa776a9
         </article>
     ))
 }
