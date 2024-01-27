@@ -1,0 +1,36 @@
+---
+    import Badge from '@/components/Badge.astro'
+    import Layout from '@/layouts/Layout.astro'
+    import SectionContainer from '@/components/SectionContainer.astro';
+    import Linkedin from '@/components/Icons/Linkedin.astro';
+    import Socialpill from '@/components/Socialpill.astro';
+
+---
+
+<Layout
+    title='Desing System porfolio Danilo caceres'
+    description='El catalgo de componentes de mi portafolio'
+>
+<SectionContainer class="py-44 pb-32 flex-col gap-y-10">
+    <article class="mb-10">
+        <h1 class="mb-10">&lt;Badge&gt;</h1>
+
+        <Badge> Trabajemos juntos ahora !!! </Badge>
+
+    </article>
+    <article class="mb-10">
+
+        <h1 class="mb-10">&lt Socialpill /&gt;</h1>
+        <div class="flex">
+            <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+                <Linkedin class="size-4 md:size-6" />
+            </Socialpill>
+        </div>
+    </article>
+    
+</SectionContainer>
+
+
+
+</Layout>
+
