@@ -1,9 +1,15 @@
 ---
+import Css from "./Icons/css.astro";
 import Flask from "./Icons/Flask.astro";
+import Github from './Icons/Github.astro'
 import HTML from "./Icons/HTML.astro";
+import linkbutton from './linkbutton.astro'
 import Mysql from "./Icons/Mysql.astro";
 import Python from "./Icons/Python.astro";
-import Css from "./Icons/css.astro";
+import Linkbutton from "./linkbutton.astro";
+import Web from './Icons/web.astro'
+
+
 
 const tags = {
     PYTHON: {
@@ -39,27 +45,38 @@ const PROJECTS = [
         link: "https://mailerapp-cdxm.onrender.com/",
         github: "https://github.com/danilo1992-sys/mailerapp",
         image: "/public/59shots_so.webp",
-        tags: [tags.PYTHON, tags.HTML, tags.Css, tags.Flask, tags.Mysql],
+        tags: [tags.PYTHON, tags.HTML, tags.Css, tags.Flask, tags.Mysql]
     },
 ];
 ---
-
 {
-    PROJECTS.map(({ title, description, tags, image }) => (
+    PROJECTS.map(({ title, description, tags, image, link, github}) => (
         <article>
             <h3 class="text-2xl font-semibold text-sky-300/80">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-4 flex-row">
+            <p class="text-lg mb-6 text-pretty">{description}</p>
+            <ul class="flex gap-x-8 flex-row">
                 {tags.map((tag) => (
                     <li>
-                        <span class={'flex gap-x-2 rounded-full text-sm ${tag.class} px-2 py-1'}'>
+                        <span class={'flex gap-x-2 rounded-full text-sm ${tag.class} px-2 py-1'}>
                             <tag.Icon class="size-6" />
                             {tag.name}
                         </span>
                     </li>
                 ))}
             </ul>
-            <img src={image} alt={"Captura de pantalla del proyecto ${image}"} />
+                <img src={image} alt={"Captura de pantalla del proyecto ${image}"} />
+            <footer class="flex gap-x-3 items-end mt-4">
+                <Linkbutton href={github} >  
+                    <Github class="size-6 "/>
+                    Ver repositorio
+                </Linkbutton>
+                <Linkbutton href={link} >
+                    <Web />
+                    Ver pagina web 
+                </Linkbutton>
+            </footer>
+            <footer>
+            </footer>
         </article>
     ))
 }

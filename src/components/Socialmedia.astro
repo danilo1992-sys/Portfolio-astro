@@ -1,0 +1,30 @@
+---
+import Socialpill from "../components/Socialpill.astro";
+import Linkedin from "../components/Icons/Linkedin.astro";
+import Github from "../components/Icons/Github.astro";
+import Gmail from "../components/Icons/Gmail.astro";
+import X from "../components/Icons/X.astro";
+import Discord from "../components/Icons/Discord.astro";
+---
+
+<nav class="flex gap-4 mt-8 flex-wrap pb-5">
+    <Socialpill href="https://www.linkedin.com/in/danilo-caceres/">
+        <Linkedin class="size-4 md:size-6" />
+    </Socialpill>
+
+    <Socialpill href="https://github.com/danilo1992-sys">
+        <Github class="size-4 md:size-6" />
+    </Socialpill>
+
+    <Socialpill href="https://discord.com/invite/_danilo22">
+        <Discord class="size-4 md:size-6" />
+    </Socialpill>
+
+    <Socialpill href="https://twitter.com/daniloca22_">
+        <X class="size-4 md:size-6" />
+    </Socialpill>
+    
+    <Socialpill >
+        <Gmail class="size-4 lg:size-6" href="#contact"/>
+    </Socialpill> 
+</nav>

@@ -1,15 +1,22 @@
 ---
-export interface Props {
+import Linkbutton from "./linkbutton.astro";
+import Download from "./Icons/Download.astro";
+
+interface Props {
   title: string;
   description: string;
   date: string;
+  link?: string;
 }
 
-const { title, description, date } = Astro.props;
+const { title, description, date, link } = Astro.props;
 ---
-<ol class=" border-gray-200 dark:border-gray-700">
+
+<ol class="border-gray-200 dark:border-gray-700">
   <li class="mb-10 ms-4">
-    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200">
+    <div
+      class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200"
+    >
     </div>
     <time class="mb-1 text-sm font-normal leading-none text-sky-200/80">
       {date}
@@ -20,6 +27,20 @@ const { title, description, date } = Astro.props;
     <p class="mb-4 text-base font-normal text-gray-200 text-pretty">
       {description}
     </p>
+    {
+      link && (
+        <Linkbutton href={link}>
+          <Download />
+          Descargar certificado {""}
+          <svg
+            class="w-3 h-3 ms-2 rtl:rotate-180"
+            aria-hidden="true"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+          </svg>
+        </Linkbutton>
+      )
+    }
   </li>
 </ol>
-
