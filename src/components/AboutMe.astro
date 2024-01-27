@@ -1,0 +1,34 @@
+---
+import Hobies from "./Hobies.astro"
+import Vacation from "./Icons/Vacation.astro"
+
+---
+
+<section class="flex gap-x-8 justify-center items-center">
+    <div class="[&>p]: mt-4 [&>p>strong]:text-yellow-600 [&>p>strong]:font-semibold text-justify">
+        <p>
+            Mi nombre es Danilo caceres pero mis amigos y familiares me dicen Dani. Empece en la informatica con un pc generico con Windos 95 cuando tenia 8 años. <strong> Actualmente me encuntro buscado mi primer empleo en el campo de la progamacion</strong>
+        </p>
+        <br>
+            En el año 2020 curse el ultimo año de la carrera de Tecnico en soporte de sistemas en el instituto tecnologico superio de Ururguay. y a su ves aprendi mas sobre la programacion con Python y Javascript
+        <p>
+            <br>
+            Uno de mis itos es que en pandemia ayude a mis compañeros de equipo a concebir el Projecto de fin de carrara aportando desde mi <strong>Experiencia como tecnico en informatica, Gestion empresearial y en vemtas y marqueting</strong> 
+        </p>
+        <br>
+        <p>
+            <em class="italic">Cuenato con experienca como tecnico em informatico trabajando de manera autodicata</em>
+        </p>
+        <br>
+        <p >
+            <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center dark:text-white/80">
+                <Vacation class=""/> 
+                    Mis hobies son 
+                </h2>
+        </p>
+        <div>
+            <Hobies /> 
+        </div>
+    </div>
+    <img src="/public/foto.webp" class="rounded-full size-64">
+</section>
