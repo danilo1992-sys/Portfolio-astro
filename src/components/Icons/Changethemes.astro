@@ -42,53 +42,54 @@ const THEMES = ['Light', 'Dark', 'System']
 </style>
 
 <script is:inline>
-  let remove = null
-  const matchMedia = window.matchMedia('(prefers-color-scheme: dark)')
-  const themesMenu = document.getElementById('themes-menu')
+  (function() {
+    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
-  const getThemePreference = () => {
-    if (typeof localStorage !== 'undefined') {
-      return localStorage.getItem('theme') ?? 'system'
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
+    const getThemePreference = () => {
+      if (typeof localStorage !== 'undefined') {
+        return localStorage.getItem('theme') ?? 'system';
+      }
+      return matchMedia.matches ? 'dark' : 'light';
+    };
 
-  const updateIcon = (themePreference) => {
-    document.querySelectorAll('.theme-toggle-icon').forEach(element => {
-      element.style.scale = element.id === themePreference ? '1' : '0'
-    })
-  }
+    const updateIcon = (themePreference) => {
+      document.querySelectorAll('.theme-toggle-icon').forEach(element => {
+        element.style.scale = element.id === themePreference ? '1' : '0';
+      });
+    };
 
-  const updateTheme = () => {
-    if (remove != null) {
-      remove()
-    }
-    matchMedia.addEventListener('change', updateTheme)
-    remove = () => {
-      matchMedia.removeEventListener('change', updateTheme)
-    }
+    const applyTheme = () => {
+      const themePreference = getThemePreference();
+      const isDark = themePreference === 'dark' || (themePreference === 'system' && matchMedia.matches);
+      updateIcon(themePreference);
+      document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+    };
 
-    const themePreference = getThemePreference()
-    const isDark = themePreference === 'dark' || (themePreference === 'system' && matchMedia.matches)
+    applyTheme();
 
-    updateIcon(themePreference)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-  }
+    matchMedia.addEventListener('change', applyTheme);
 
-  updateTheme()
+    document.addEventListener('DOMContentLoaded', () => {
+      const themesMenu = document.getElementById('themes-menu');
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
-  document.addEventListener('click', () => themesMenu.classList.remove('open'))
+      if (!themesMenu || !themeToggleBtn) return;
 
-  document.getElementById('theme-toggle-btn').addEventListener('click', (e) => {
-    e.stopPropagation()
-    const isClosed = !themesMenu.classList.contains('open')
-    themesMenu.classList[isClosed ? 'add' : 'remove']('open')
-  })
+      document.addEventListener('click', () => themesMenu.classList.remove('open'));
 
-  document.querySelectorAll('.themes-menu-option').forEach((element) => {
-    element.addEventListener('click', e => {
-      localStorage.setItem('theme', e.target.innerText.toLowerCase().trim())
-      updateTheme()
-    })
-  })
+      themeToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isClosed = !themesMenu.classList.contains('open');
+        themesMenu.classList[isClosed ? 'add' : 'remove']('open');
+      });
+
+      document.querySelectorAll('.themes-menu-option').forEach((element) => {
+        element.addEventListener('click', (e) => {
+          const theme = e.target.innerText.toLowerCase().trim();
+          localStorage.setItem('theme', theme);
+          applyTheme();
+        });
+      });
+    });
+  })();
 </script>

@@ -1,18 +1,18 @@
 ---
 import "@fontsource-variable/onest/";
 import Footer from "../components/Footer.astro";
-import Header from '../components/Header.astro'
+import Header from "../components/Header.astro";
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -20,41 +20,49 @@ const { description, title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem('theme') ?? 'system';
+				const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+			})();
+		</script>
 	</head>
-	<body class="py-4">
-<<<<<<< HEAD
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-=======
+	<body class="py-4 text-gray-900 dark:text-white">
 		<div
-			class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+			class="fixed top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(#0000001a_1px,#ffffff_1px)] bg-[size:20px_20px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"
 		>
->>>>>>> 67856f354a42caa62d3b8571bea47d0dffa776a9
 		</div>
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 <style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html {
-		font-family: "Onest varible ", system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Onest varible ", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
 
 	body {
-		background-color: #050505;
+		background-color: #ffffff;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
 		overscroll-behavior: none;
 	}
 
-	@media (prefers-reduce-motion: reduce) {
-		html {
-			scroll-behavior: auto;
-		}
+	:root.dark body {
+		background-color: #050505;
 	}
+
+  @media (prefers-reduce-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 </style>
+

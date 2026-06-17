@@ -15,16 +15,16 @@ const { title, description, date, link } = Astro.props;
 <ol class="border-gray-200 dark:border-gray-700">
   <li class="mb-10 ms-4">
     <div
-      class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200"
+      class="absolute w-3 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200"
     >
     </div>
-    <time class="mb-1 text-sm font-normal leading-none text-sky-200/80">
+    <time class="mb-1 text-sm font-normal leading-none text-sky-600 dark:text-sky-200/80">
       {date}
     </time>
     <h3 class="text-lg font-semibold mt-4">
       {title}
     </h3>
-    <p class="mb-4 text-base font-normal text-gray-200 text-pretty">
+    <p class="mb-4 text-base font-normal text-gray-700 dark:text-gray-200 text-pretty">
       {description}
     </p>
     {
