@@ -1,0 +1,87 @@
+---
+import Lang from "./Icons/lang.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import { lang as langMap } from "../i18n/ui";
+
+const currentLang = getLangFromUrl(Astro.url);
+const LANG = ["es", "en"] as const;
+---
+
+<div class="relative">
+  <button
+    id="lang-toggle-btn"
+    class="appearance-none border-none flex backdrop-blur-md"
+  >
+    <Lang />
+    <span class="sr-only">Choose language</span>
+  </button>
+  <div
+    id="lang-menu"
+    class="absolute opacity-0 scale-80 top-7 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/70 dark:bg-gray-900/70 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+  >
+    <ul>
+      {
+        LANG.map((code) => (
+          <li>
+            <a
+              href={code === "es" ? "/" : `/${code}/`}
+              class="lang-option block px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+              class:list={{ "font-bold": code === currentLang }}
+            >
+              {langMap[code]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  #lang-menu.open {
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const langMenu = document.getElementById("lang-menu");
+    const langToggleBtn = document.getElementById("lang-toggle-btn");
+
+    if (!langMenu || !langToggleBtn) return;
+
+    const updateIcon = (lang) => {
+      document.querySelectorAll(".lang-toggle-icon").forEach((el) => {
+        el.style.scale = el.id === lang ? "1" : "0";
+      });
+    };
+
+    const currentLang = document.documentElement.lang || "es";
+    updateIcon(currentLang);
+
+    document.addEventListener("click", function () {
+      langMenu.classList.remove("open");
+    });
+
+    langToggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const isClosed = !langMenu.classList.contains("open");
+      if (isClosed) {
+        langMenu.classList.add("open");
+      } else {
+        langMenu.classList.remove("open");
+      }
+    });
+  })();
+</script>

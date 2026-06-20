@@ -1,72 +1,108 @@
-# Portfolio astro Danilo Caceres
+# 💡 **TiposCoordenadas**  
 
-```sh
-npm create astro@latest -- --template basics
+TiposCoordenadas es una micro‑biblioteca escrita en **Python 3.11** que facilita la transformación y manipulación de coordenadas geográficas en el dominio de las mediciones de temperatura y densidad de gases a distintas latitudes y longitudes. El proyecto fue pensado para integrarse en sistemas de monitoreo ambiental, meteorología y análisis de datos geoespaciales, ofreciendo una interfaz simple y altamente tipada que permite a los desarrolladores trabajar sin preocuparse por los errores de conversión de unidades.
+
+---
+
+## 📋 Tabla de Características  
+
+| Característica | Descripción |
+|----------------|-------------|
+| **Tipado estático** | Utiliza `pydantic` y `typing` para validar y documentar los modelos de datos. |
+| **Conversión de unidades** | Funciones de ayuda para pasar entre grados Celsius y Kelvin, metros y kilómetros. |
+| **Políticas de latitud/longitud** | `LatitudePolicy` y `LongitudePolicy` garantizan que los valores se mantengan en rangos válidos. |
+| **Mensajes de error claros** | Los errores de conversión generan excepciones con mensajes descriptivos que facilitan la depuración. |
+| **v1.0.0** | Primera versión estable con API simple y bien documentada. |
+
+---
+
+## 🚀 Instalación
+
+### Requisitos previos  
+
+- Python 3.11 o superior  
+- `pip` actualizado  
+
+### Pasos
+
+1. **Clona el repositorio**  
+   ```bash
+   git clone https://github.com/tu-usuario/tiposcoordenadas.git
+   cd tiposcoordenadas
+   ```
+
+2. **Crea un entorno virtual (opcional pero recomendado)**  
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate   # Windows: .venv\Scripts\activate
+   ```
+
+3. **Instala las dependencias**  
+   ```bash
+   pip install -e .
+   ```
+
+   El proyecto depende únicamente de:
+
+   | Paquete | Versión |
+   |--------|--------|
+   | `pydantic` | `>=2.0.0` |
+   | `typing-extensions` | `>=4.12.0` |
+
+4. **Verifica la instalación**  
+   ```bash
+   python -c "import tiposcordenadas; print(tiposcordenadas.__version__)"
+   ```
+
+   Deberías ver algo como: `TiposCoordenadas v1.0.0`.
+
+---
+
+## 🛠️ Uso Básico
+
+```python
+from tiposcordenadas import (
+    ConvertToMetrics,
+    ConvertToKilometers,
+    Temperature
+)
+
+# Convertir temperatura de Celsius a Kelvin
+k = ConvertToMetrics.convert_from_celsius_to_kelvin(Temperature(25))
+print(k)  # 298.15
+
+# Conversión de metros a kilómetros
+km = ConvertToKilometers.convert_from_meters_to_kilometers(8500)
+print(km)  # 8.5
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+La biblioteca está diseñada para ser *fluent* y clara, con nombres de métodos que reflejan exactamente la operación que se realiza.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🤝 Cómo contribuir
 
-## 🚀 Project Structure
+¡Todas las contribuciones son bienvenidas! Si quieres mejorar la biblioteca, sigue estos pasos:
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Fork** el repositorio.  
+2. **Crea una rama** con un nombre descriptivo:  
+   ```bash
+   git checkout -b feature/nueva-conversión
+   ```  
+3. **Escribe tests** (la suite existente se ejecuta con `pytest`).  
+4. **Ejecuta la linting** y el test suite:  
+   ```bash
+   pre-commit run --all-files
+   pytest
+   ```  
+5. **Haz un Pull Request** describiendo los cambios y los motivos.  
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │    ├── icons/
-│   │    │    ├── Changethemes.astro
-│   │    │    ├── Code.astro
-│   │    │    ├── academy.astro
-│   │    │    ├── Discord.astro
-│   │    │    ├── Github.astro
-│   │    │    ├── Gamil.astro
-│   │    │    ├── Linkedin.astro
-│   │    │    └── X.astro
-│   │    ├── static/
-│   │    ├── Card.astro
-│   │    ├── Experience.astro
-│   │    ├── Experienceitems.astro
-│   │    ├── Footer.astro
-│   │    ├── Header.astro
-│   │    ├── Projects.astro
-│   │    ├── SectionContainer.astro
-│   │    ├── Socialpill.astro
-│   │    └── Badge.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Asegúrate de seguir el formato de docstring estándar y de mantener la documentación actualizada. Para iniciar una discusión, abre un Issue detallando tu idea antes de enviar el PR.  
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/¿`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📜 Licencia  
 
-Any static assets, like images, can be placed in the `public/` directory.
+MIT © 2026 *TiposCoordenadas*  – <https://github.com/tu-usuario/tiposcoordenadas/blob/main/LICENSE>  
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---

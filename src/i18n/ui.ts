@@ -1,0 +1,103 @@
+export const lang = {
+  es: "Español",
+  en: "English",
+};
+
+export const defaultlang = "es";
+
+export const ui = {
+  es: {
+    n1: "Expreiencia",
+    n2: "Projectos",
+    n3: "Sobre mi",
+    n4: "Contactos",
+    title: "Hola soy Danilo",
+    badge: "Trabajemos juntos ahora !!!",
+    presentacion:
+      "Mas de 10 años como Technical support freelanse, Desarrollador web junior Python y Javascript. De Montevideo, Uruguay",
+    experiencia: "Experiencia Academica",
+    soporte1: "Tecnico en soporte de sistemas",
+    soporte2:
+      "Egresado del instituto tecnologico superior en la carrera de Tecnico en soporte de sistemas",
+    fullstack1: "Programador Fulstack",
+    fullstack2:
+      "Egresado de la academia Udemy con el instructor Nicolas Schurmann en el curso de Javascript, React y Nodejs",
+    python1: "Programador Python",
+    python2:
+      "Egresado de la academia Udemy con el instructor Nicolas Schurmann en el curso de Python, MySQL Y Flask",
+    certificado: "Descargar certificado",
+    priject: "Projectos",
+    p1: "Herramienta CLI interactiva para la generación automatizada de proyectos en múltiples stacks tecnológicos (Node.js, Python, Go, Bash) con integración de frameworks y configuración de dependencias.",
+    p2: "Bot de Telegram en Python que consulta datos en tiempo real de la FIFA World Cup mediante comandos interactivos, desplegado con Docker.",
+    p3: "tooldevs es una herramienta CLI en Python que automatiza tareas del flujo de desarrollo mediante IA: genera commits siguiendo Conventional Commits, redacta READMEs analizando el código fuente, y crea posts para LinkedIn. Utiliza OpenRouter como backend de IA y ofrece un menú interactivo con InquirerPy. Construido con Python 3.14+, simplifica tareas repetitivas del desarrollador con un solo comando.",
+    github: "Ver repositorio",
+    mi1: "Sobre mi",
+    mi2: "Mi nombre es Danilo caceres pero mis amigos y familiares me dicen Dani. Empece en la informatica con un pc generico con Windos 95 cuando tenia 8 años.",
+    mi3: "Actualmente me encuentro buscando mi primer empleo en el campo de la programacion",
+    mi4: "En el año 2020 curse el ultimo año de la carrera de Tecnico en soporte de sistemas en el instituto tecnologico superior de Uruguay y a su vez aprendi mas sobre la programacion con Python y Javascript",
+    mi5: "Uno de mis hitos es que en pandemia ayude a mis compañeros de equipo a concebir el Proyecto de fin de carrera aportando desde mi ",
+    mi5_strong:
+      "Experiencia como tecnico en informatica, Gestion empresarial y en ventas y marketing",
+    mi6: "Cuento con experiencia como tecnico en informatica trabajando de manera autodidacta",
+    hobies: "Mis hobies ",
+    games: "Videojuegos",
+    musica: "Escuchar Musica",
+    camping: "Salir de Camping",
+    f1: "Ver F1",
+    futbol: "Futbol",
+    cocinar: "Cocinar",
+    contacto: "Contacto",
+    mail: "Enviar mail",
+    nombre: "Nombre",
+    email: "Email",
+    detalles: "Detalle",
+    enviar: "Enviar mail",
+  },
+  en: {
+    n1: "Experience",
+    n2: "Projects",
+    n3: "About me",
+    n4: "Contacts",
+    title: "Hi, I'm Danilo",
+    badge: "Let's work together now !!!",
+    presentacion:
+      "Over 10 years as a freelance Technical Support, Junior Python and JavaScript Web Developer. From Montevideo, Uruguay.",
+    experiencia: "Academic Experience",
+    soporte1: "IT Support Technician",
+    soporte2:
+      "Graduated from the Instituto Tecnológico Superior with a degree in IT Support Technician",
+    fullstack1: "Fullstack Programmer",
+    fullstack2:
+      "Graduated from Udemy Academy under instructor Nicolas Schurmann in the JavaScript, React, and Node.js course",
+    python1: "Python Programmer",
+    python2:
+      "Graduated from Udemy Academy under instructor Nicolas Schurmann in the Python, MySQL, and Flask course",
+    certificado: "Download certificate",
+    priject: "Projects",
+    p1: "Interactive CLI tool for automated project generation across multiple tech stacks (Node.js, Python, Go, Bash) with framework integration and dependency configuration.",
+    p2: "Python Telegram Bot that queries real-time FIFA World Cup data via interactive commands, deployed with Docker.",
+    p3: "tooldevs is a Python CLI tool that automates development workflow tasks using AI: it generates commits following Conventional Commits, writes READMEs by analyzing source code, and creates LinkedIn posts. It uses OpenRouter as an AI backend and features an interactive menu with InquirerPy. Built with Python 3.14+, it simplifies repetitive developer tasks with a single command.",
+    github: "View repository",
+    mi1: "About me",
+    mi2: "My name is Danilo Cáceres, but my friends and family call me Dani. I started in IT with a generic PC running Windows 95 when I was 8 years old.",
+    mi3: "Currently, I am looking for my first job in the programming field.",
+    mi4: "In 2020, I completed my final year of the IT Support Technician degree at the Instituto Tecnológico Superior of Uruguay, while simultaneously learning more about programming with Python and JavaScript.",
+    mi5: "One of my milestones is that during the pandemic, I helped my teammates conceive our final capstone project, contributing from my ",
+    mi5_strong:
+      "Experience as an IT technician, business management, and sales and marketing.",
+    mi6: "I have experience as an IT technician working self-taught.",
+    hobies: "My hobbies",
+    games: "Video games",
+    musica: "Listening to music",
+    camping: "Going camping",
+    f1: "Watching F1",
+    futbol: "Football",
+    cocinar: "Cooking",
+    contacto: "Contact",
+    mail: "Send email",
+    nombre: "Name",
+    email: "Email",
+    detalles: "Details",
+    enviar: "Send email",
+  },
+} as const;

@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Linkbutton from "./linkbutton.astro";
 import Download from "./Icons/Download.astro";
 
@@ -10,14 +11,13 @@ interface Props {
 }
 
 const { title, description, date, link } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <ol class="border-gray-200 dark:border-gray-700">
   <li class="mb-10 ms-4">
-    <div
-      class="absolute w-3 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200"
-    >
-    </div>
+    <div class="absolute w-3 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:bg-gray-200"></div>
     <time class="mb-1 text-sm font-normal leading-none text-sky-600 dark:text-sky-200/80">
       {date}
     </time>
@@ -31,14 +31,8 @@ const { title, description, date, link } = Astro.props;
       link && (
         <Linkbutton href={link}>
           <Download />
-          Descargar certificado {""}
-          <svg
-            class="w-3 h-3 ms-2 rtl:rotate-180"
-            aria-hidden="true"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-          </svg>
+          {t("certificado")}
+          <svg class="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 14 10"></svg>
         </Linkbutton>
       )
     }

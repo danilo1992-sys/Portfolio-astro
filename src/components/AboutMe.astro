@@ -1,35 +1,34 @@
 ---
-import Vacation from './Icons/Vacation.astro';
-import Hobies from './Hobies.astro';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Hobies from "./Hobies.astro";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="flex gap-x-8 justify-center items-center">
-    <div class="[&>p]: mt-4 [&>p>strong]:text-yellow-600 [&>p>strong]:font-semibold text-justify">
-        <p>
-            Mi nombre es Danilo caceres pero mis amigos y familiares me dicen Dani. Empece en la informatica con un pc generico con Windos 95 cuando tenia 8 años. <strong> Actualmente me encuntro buscado mi primer empleo en el campo de la progamacion</strong>
-        </p>
-        <br>
-            En el año 2020 curse el ultimo año de la carrera de Tecnico en soporte de sistemas en el instituto tecnologico superio de Ururguay. y a su ves aprendi mas sobre la programacion con Python y Javascript
-        <p>
-            <br>
-            Uno de mis itos es que en pandemia ayude a mis compañeros de equipo a concebir el Projecto de fin de carrara aportando desde mi <strong>Experiencia como tecnico en informatica, Gestion empresearial y en vemtas y marqueting</strong> 
-        </p>
-        <br>
-        <p>
-            <em class="italic">Cuenato con experienca como tecnico em informatico trabajando de manera autodicata</em>
-        </p>
-        <br>
-        <p >
-            <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-gray-900 dark:text-white/80">
-                <Vacation /> 
-                    Mis hobies son 
-                </h2>
-        </p>
-        <div>
-            <Hobies /> 
-        </div>
-    </div>
-    <img src="/foto.webp" class="rounded-full size-64">
-</section>
+  <div
+    class="[&>p]:mt-4 [&>p>strong]:text-yellow-600 [&>p>strong]:font-semibold text-justify"
+  >
+    <p>
+      {t("mi2")}
+      <strong>{t("mi3")}</strong>
+    </p>
+    <br />
+    {t("mi4")}
+    <p>
+      <br />
+      {t("mi5")}<strong>{t("mi5_strong")}</strong>
+    </p>
+    <br />
+    <p>
+      <em class="italic">{t("mi6")}</em>
+    </p>
+    <br />
 
+    <div>
+      <Hobies />
+    </div>
+  </div>
+  <img src="/foto.webp" class="rounded-full size-64" />
+</section>

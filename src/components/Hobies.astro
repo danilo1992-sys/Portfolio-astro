@@ -1,31 +1,59 @@
 ---
-import Game from "./Icons/Game.astro"
-import Music from "./Icons/Music.astro"
-import Camping from "./Icons/camping.astro"
-import F1 from "./Icons/F1.astro"
-import Cook from "./Icons/Cook.astro"
-import Futbol from "./Icons/Futbol.astro"
-
-
-
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Game from "./Icons/Game.astro";
+import Music from "./Icons/Music.astro";
+import Camping from "./Icons/camping.astro";
+import F1 from "./Icons/F1.astro";
+import Cook from "./Icons/Cook.astro";
+import Futbol from "./Icons/Futbol.astro";
+import Vacation from "./Icons/Vacation.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
+
+<p>
+  <h2
+    class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-gray-900 dark:text-white/80"
+  >
+    <Vacation />
+    {t("hobies")}
+  </h2>
+</p>
 <table class="mx-3">
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 px-4 inline-flex space-y-4">
-        <Game /> jugar videojuegos
-    </a>
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 px-2 inline-flex  ">
-        <Music /> Escuchar musica
-    </a>
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full  gap-x-2 py-1 inline-flex px-4 ">
-        <Camping /> Ir de Camping
-    </a>
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 inline-flex px-4 ">
-        <F1 /> Mirar la Formula 1
-    </a>
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full  gap-x-2 py-1 inline-flex px-4  ">
-        <Futbol /> Jugar al futbol 
-    </a>
-    <a class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full  gap-x-2 py-1 inline-flex px-4 ">
-        <Cook /> Cocinar
-    </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 px-4 inline-flex space-y-4 mb-2"
+  >
+    <Game />
+    {t("games")}
+  </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 px-2 inline-flex"
+  >
+    <Music />
+    {t("musica")}
+  </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 inline-flex px-4"
+  >
+    <Camping />
+    {t("camping")}
+  </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 inline-flex px-4"
+  >
+    <F1 />
+    {t("f1")}
+  </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 inline-flex px-4"
+  >
+    <Futbol />
+    {t("futbol")}
+  </a>
+  <a
+    class="bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full gap-x-2 py-1 inline-flex px-4"
+  >
+    <Cook />
+    {t("cocinar")}
+  </a>
 </table>

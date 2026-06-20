@@ -1,11 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Github from "./Icons/Github.astro";
 import Python from "./Icons/Python.astro";
 import Uv from "./Icons/uv.astro";
 import Linkbutton from "./linkbutton.astro";
 import Telegram from "./Icons/Telegram.astro";
 import Docker from "./Icons/Docker.astro";
-import Web from "./Icons/web.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const tags = {
   PYTHON: {
@@ -37,19 +40,24 @@ const tags = {
 const PROJECTS = [
   {
     title: "Projects ",
-    description:
-      "Herramienta CLI interactiva para la generación automatizada de proyectos en múltiples stacks tecnológicos (Node.js, Python, Go, Bash) con integración de frameworks y configuración de dependencias.",
+    description: t("p1"),
     github: "https://github.com/danilo1992-sys/projects.git",
     image: "/screenshot-2026-06-16_20-48-47.webp",
     tags: [tags.PYTHON, tags.UV],
   },
   {
     title: "Bot copa del mundo",
-    description:
-      "Bot de Telegram en Python que consulta datos en tiempo real de la FIFA World Cup mediante comandos interactivos, desplegado con Docker.",
+    description: t("p2"),
     github: "https://github.com/danilo1992-sys/bot.git",
     image: "/331shots_so.webp",
     tags: [tags.PYTHON, tags.UV, tags.TELEGRAM, tags.DOCKER],
+  },
+  {
+    title: "Tooldevs",
+    description: t("p3"),
+    github: "https://github.com/danilo1992-sys/tooldevs.git",
+    image: "/p.webp",
+    tags: [tags.PYTHON, tags.UV],
   },
 ];
 ---
@@ -71,11 +79,11 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+      <img src={image} alt={`${t("priject")} ${title}`} />
       <footer class="flex gap-x-3 items-end mt-4">
         <Linkbutton href={github}>
           <Github class="size-6" />
-          Ver repositorio
+          {t("github")}
         </Linkbutton>
       </footer>
     </article>

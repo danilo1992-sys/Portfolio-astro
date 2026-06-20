@@ -1,38 +1,42 @@
 ---
-import "@fontsource-variable/onest/";
+import "@fontsource-variable/onest";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
   description: string;
+  lang?: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title, lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<script is:inline>
-			(function() {
-				const theme = localStorage.getItem('theme') ?? 'system';
-				const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-				document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
-			})();
-		</script>
-	</head>
-	<body class="py-4 text-gray-900 dark:text-white">
-		<div
-			class="fixed top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(#0000001a_1px,#ffffff_1px)] bg-[size:20px_20px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"
-		>
-		</div>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem("theme") ?? "system";
+        const isDark =
+          theme === "dark" ||
+          (theme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+      })();
+    </script>
+  </head>
+  <body class="py-4 text-gray-900 dark:text-white">
+    <div
+      class="fixed top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(#0000001a_1px,#ffffff_1px)] bg-[size:20px_20px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"
+    >
+    </div>
     <Header />
     <slot />
     <Footer />
@@ -47,17 +51,17 @@ const { description, title } = Astro.props;
     scroll-behavior: smooth;
   }
 
-	body {
-		background-color: #ffffff;
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		overscroll-behavior: none;
-	}
+  body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overscroll-behavior: none;
+  }
 
-	:root.dark body {
-		background-color: #050505;
-	}
+  :root.dark body {
+    background-color: #050505;
+  }
 
   @media (prefers-reduce-motion: reduce) {
     html {
@@ -65,4 +69,3 @@ const { description, title } = Astro.props;
     }
   }
 </style>
-
