@@ -6,36 +6,39 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const navItems = [
+  { label: t("home"), url: "/#" },
   { label: t("n1"), url: "/#experiencia" },
   { label: t("n2"), url: "/#proyectos" },
+  { label: "Poc", url: "/#pocs" },
   { label: t("n3"), url: "/#sobre-mi" },
   { label: t("n4"), url: "/#contacto" },
 ];
 ---
 
-<header
-  class="h-14 flex justify-center items-center gap-x-3 mx-auto pt-2 sticky top-0 w-full z-10"
+<div
+  class="fixed left-0 top-0 h-screen flex flex-col justify-between w-fit pt-5"
 >
-  <nav
-    class="w-full md:w-3/4 lg:w-1/2 xl:w-2/5 h-full border-2 border-gray-300 dark:border-gray-500 rounded-full md:px-6 px-3 py-1 flex flex-wrap flex-row items-center justify-center bg-white/80 dark:bg-black/50 backdrop-blur-2xl"
-  >
+  <ul>
+    <li class="flex flex-row gap-4">
+      <Changethemes />
+      <ChangeLang />
+    </li>
+    <hr class="border-gray-200 dark:border-gray-700 mx-2" />
     {
       navItems.map((item) => (
-        <a
-          class="hover:bg-black/10 dark:hover:bg-white/10 p-1 rounded-full px-2 sm:px-3 transition ease-in text-sm sm:text-base capitalize"
-          aria-l={item.label}
-          href={item.url}
-        >
-          {item.label}
-        </a>
+        <li>
+          <a
+            class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-900 dark:text-white"
+            aria-l={item.label}
+            href={item.url}
+          >
+            {item.label}
+          </a>
+        </li>
       ))
     }
-    <span class="w-px h-5 mx-1"></span>
-    <Changethemes />
-    <span class="w-px h-5 mx-1"></span>
-    <ChangeLang />
-  </nav>
-</header>
+  </ul>
+</div>
 
 <script>
   const $navAElements: Element[] = [

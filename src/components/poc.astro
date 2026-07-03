@@ -1,0 +1,76 @@
+---
+import Bash from "./Icons/Bash.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import Linkbutton from "./linkbutton.astro";
+import Github from "./Icons/Github.astro";
+import Php from "./Icons/php.astro";
+import Docker from "./Icons/Docker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const tags = {
+  BASH: {
+    name: "bash",
+    class:
+      "bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full inline-flex justify-center items-center gap-x-2 py-1 px-2 md:px-4 md:py-2 text-xs md:text-base transition",
+    icon: Bash,
+  },
+  PHP: {
+    name: "php",
+    class:
+      "bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full inline-flex justify-center items-center gap-x-2 py-1 px-2 md:px-4 md:py-2 text-xs md:text-base transition",
+    icon: Php,
+  },
+  DOCKER: {
+    name: "docker",
+    class:
+      "bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 rounded-full inline-flex justify-center items-center gap-x-2 py-1 px-2 md:px-4 md:py-2 text-xs md:text-base transition",
+    icon: Docker,
+  },
+};
+
+const POC = [
+  {
+    title: "CVE-2021-29447",
+    description: t("poc1"),
+    link: "https://github.com/danilo1992-sys/CVE-2021-29447",
+    tags: [tags.BASH, tags.PHP, tags.DOCKER],
+  },
+  {
+    title: "CVE-2025-32463",
+    description: t("poc2"),
+    link: "https://github.com/danilo1992-sys/CVE-2025-32463.git",
+    tags: [tags.BASH],
+  },
+];
+---
+
+{
+  POC.map(({ title, description, link, tags }) => (
+    <article class="rounded-[10px] border border-gray-200 bg-white px-4 pt-4 pb-4 dark:border-gray-700 dark:bg-gray-900 mb-6">
+      <ul class="flex gap-x-8 flex-row mb-2">
+        <li class="flex gap-x-2">
+          {tags.map((tag) => (
+            <span class={`flex gap-x-2 text-xs ${tag.class}`}>
+              <tag.icon class="size-6" />
+              {tag.name}
+            </span>
+          ))}
+        </li>
+      </ul>
+      <h3 class="text-2xl font-semibold text-sky-600 dark:text-sky-300/80">
+        {title}
+      </h3>
+      <span class="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
+        {description}
+      </span>
+      <div class="mt-4 flex flex-wrap gap-1">
+        <Linkbutton link={link}>
+          <Github class="size-6" />
+          {t("github")}
+        </Linkbutton>
+      </div>
+    </article>
+  ))
+}

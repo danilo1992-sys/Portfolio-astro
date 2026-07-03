@@ -7,6 +7,7 @@ export const defaultlang = "es";
 
 export const ui = {
   es: {
+    home: "Inicio",
     n1: "Expreiencia",
     n2: "Projectos",
     n3: "Sobre mi",
@@ -52,8 +53,11 @@ export const ui = {
     email: "Email",
     detalles: "Detalle",
     enviar: "Enviar mail",
+    poc1: "Exploit funcional para CVE-2021-29447, una vulnerabilidad XXE en WordPress ≤5.7.0 que inyecta XML malicioso en metadatos WAV para leer y exfiltrar archivos arbitrarios del servidor vía HTTP.",
+    poc2: "Exploit para CVE-2025-32463, una vulnerabilidad crítica de escalada de privilegios locales en sudo (versiones 1.9.14–1.9.17) que abusa de la opción --chroot para cargar bibliotecas maliciosas desde un directorio controlado y obtener acceso root.",
   },
   en: {
+    home: "Home",
     n1: "Experience",
     n2: "Projects",
     n3: "About me",
@@ -99,5 +103,7 @@ export const ui = {
     email: "Email",
     detalles: "Details",
     enviar: "Send email",
+    poc1: "Functional exploit for CVE-2021-29447, an XXE vulnerability in WordPress ≤5.7.0 that injects malicious XML into WAV metadata to read and exfiltrate arbitrary server files via HTTP.",
+    poc2: "Exploit for CVE-2025-32463, a critical local privilege escalation in sudo (versions 1.9.14–1.9.17) that abuses the --chroot option to load malicious libraries from a user-controlled directory and gain root access.",
   },
 } as const;
