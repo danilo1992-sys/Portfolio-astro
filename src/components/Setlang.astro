@@ -24,7 +24,7 @@ const LANG = ["es", "en"] as const;
         LANG.map((code) => (
           <li>
             <a
-              href={code === "es" ? "/" : `/${code}/`}
+              href={`/${code}/`}
               class="lang-option block px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
               class:list={{ "font-bold": code === currentLang }}
             >
