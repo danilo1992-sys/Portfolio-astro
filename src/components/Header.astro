@@ -6,12 +6,12 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const navItems = [
-  { label: t("home"), url: "/#" },
-  { label: t("n1"), url: "/#experiencia" },
-  { label: t("n2"), url: "/#proyectos" },
-  { label: "Poc", url: "/#pocs" },
-  { label: t("n3"), url: "/#sobre-mi" },
-  { label: t("n4"), url: "/#contacto" },
+  { label: t("home"), url: `/${lang}/#` },
+  { label: t("n1"), url: `/${lang}/#experiencia` },
+  { label: t("n2"), url: `/${lang}/#proyectos` },
+  { label: "Poc", url: `/${lang}/#pocs` },
+  { label: t("n3"), url: `/${lang}/#sobre-mi` },
+  { label: t("n4"), url: `/${lang}/#contacto` },
 ];
 ---
 
